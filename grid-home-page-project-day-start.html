@@ -8,45 +8,119 @@
 
         * {
             box-sizing: border-box;
+            margin: 0;
         }
 
         body {
+            min-height: 100vh;
+        }
+
+
+        .header {
+            grid-area: header;
+            background-color: #BADA55;
+            font-size: 2rem;
+            text-align: center;
+            color: #069;
+            text-transform: capitalize;
+            padding: 1rem;
+        }
+
+        .nav {
+            grid-area: nav;
+            background-color: #BADA55;
+            border-top: 1px solid #024;
+        }
+
+        .nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.2rem;
+            color: #069;
+            padding: 0;
+        }
+
+        .nav ul li {
+            padding: .5rem;
+        }
+
+        .maincontent {
+            grid-area: maincontent;
+            background-color: #FFF;
+            font-size: 1.5rem;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: darkorange;
+            word-wrap: break-word;
+            color: #FFF;
+            padding: .5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #C0FFEE;
+            padding: 0.5rem;
+            text-align: center;
+            color: #069;
+            font-size: 1.2rem;
 
         }
 
-        .container {
+
+        .grid-container {
+            min-height: 100vh;
             display: grid;
+            grid-template-columns: 1fr 150px;
+            grid-template-rows: auto auto 1fr auto;
+            grid-template-areas: 
+            "header         header"
+            "nav            sidebar"
+            "maincontent    sidebar"
+            "footer         footer"
+            ;
         }
 
     </style>
 </head>
 
 <body>
-<header>
-    title
-</header>
+    <div class="grid-container">
+        <header class="header">
+            title
+        </header>
+        <nav class="nav">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    
+        <main class="maincontent">
+            <article>
+                <h2>Header</h2>
+                <p>Cur orgia messis? Green people yell with assimilat
+                    ion at the photonic solar sphere! Habitios ridetis in cirpi!</p>
+            </article>
+        </main>
+    
+        <aside class="sidebar">
+            Jolly rogers grow on hunger at fort charles!
+            Jolly rogers grow on hunger at fort charles!
+            Jolly rogers grow on hunger at fort charles!
+            Jolly rogers grow on hunger at fort charles!
+            Jolly rogers grow on hunger at fort charles!
+        </aside>
+        <footer class="footer">
+            copyrights
+        </footer>
+    </div>
 
-<nav>
-    <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-    </ul>
-</nav>
-
-<main>
-    <article>
-        <h2>Header</h2>
-        <p>Cur orgia messis?Green people yell with assimilat
-            ion at the photonic solar sphere!Habitios ridetis in cirpi!</p>
-    </article>
-</main>
-
-<aside>
-    Jolly rogers grow on hunger at fort charles!
-</aside>
-<footer>
-    copyrights
-</footer>
 </body>
 </html>
